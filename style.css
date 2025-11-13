@@ -1,0 +1,304 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+/* Variables de Color (Neón) */
+:root {
+    --color-bg-dark: #0A0A1F;
+    --color-primary: #00FFFF; /* Cian Neón */
+    --color-secondary: #FF00FF; /* Magenta Neón */
+    --color-text-light: #F0F0F0;
+    --color-text-gray: #A0A0B0;
+}
+
+/* Base y Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+/* Estilos Comunes de Secciones */
+.section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dark-section {
+    background-color: #1A1A3A;
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--color-primary);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+.neon-subtitle {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-secondary);
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+    margin-bottom: 15px;
+}
+
+/* HEADER Y NAV */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(10, 10, 31, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+    color: var(--color-primary);
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+}
+
+.nav-link {
+    margin-left: 25px;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: var(--color-secondary);
+    text-shadow: 0 0 5px var(--color-secondary);
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 85vh;
+    padding: 0 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.neon-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4em;
+    color: #fff;
+    text-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary), 0 0 30px var(--color-primary);
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            0 0 10px var(--color-primary),
+            0 0 20px var(--color-primary),
+            0 0 40px var(--color-primary),
+            0 0 60px var(--color-primary),
+            0 0 80px var(--color-primary);
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+.slogan {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: var(--color-text-gray);
+}
+
+.mission {
+    margin-bottom: 30px;
+}
+
+.hero-image-placeholder {
+    width: 40%;
+    height: 400px;
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-family: 'Orbitron', sans-serif;
+    /* Aquí iría la imagen */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    text-transform: uppercase;
+}
+
+.cta-button:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-bg-dark);
+    box-shadow: 0 0 20px var(--color-secondary);
+}
+
+/* VISION SECTION (Cards) */
+.quote {
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: var(--color-text-gray);
+}
+
+.card-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    flex: 1;
+    background-color: #1A1A3A;
+    padding: 30px;
+    border-radius: 10px;
+    border-top: 3px solid var(--color-primary);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+}
+
+.card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+/* OBJETIVOS E INNOVACION (2 Columnas) */
+.content-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.col-50 {
+    flex: 1;
+}
+
+.col-50 ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.col-50 ul li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%2300FFFF"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left 5px;
+    background-size: 16px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.tech-list li {
+    color: var(--color-text-light);
+    font-weight: 600;
+}
+
+/* USUARIO */
+.user-profile {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px dashed var(--color-secondary);
+    border-radius: 10px;
+}
+
+.user-profile p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px 5%;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+    font-size: 0.9em;
+    color: var(--color-text-gray);
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Media Queries para Responsividad (Móviles) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding-top: 100px;
+    }
+
+    .hero-content, .hero-image-placeholder {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .neon-text {
+        font-size: 3em;
+    }
+
+    .card-container, .content-row {
+        flex-direction: column;
+    }
+
+    .section {
+        padding: 50px 5%;
+    }
+}
